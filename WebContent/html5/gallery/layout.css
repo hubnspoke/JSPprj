@@ -14,6 +14,14 @@
 
 .gallery-show-box > img
 {
+	opacity:1;
+	/* margin-top:50px; */
+	/* transition:10s margin-top steps(3,end); */
+	/* transition:1s opacity ease-in-out, 1s margin-top cubic-bezier(0.32, -0.3,0.69,1); */
+	/* transition-property:opacity, margin-top;
+	transition-duration:1s,3s; */
+	/* transform-origin: right top; */
+	/* transform:rotate(0deg); */
 	display: block;
 	margin-top: 25px;
 	margin-left: auto;
@@ -21,11 +29,30 @@
 	height:250px;
 }
 
+@-webkit-keyframes slide-up{
+	0%{
+	margin-top:25px;
+	}
+	50%{
+	margin-top:50px;
+	}
+	100%{
+	margin-top:0px;
+	}
+}
+
 .gallery-show-box > img:hover
 {
-	
+	-webkit-animation-name > slide-up;
+	-webkit-animation-duration : 1s;
+	-webkit-animation-timing-function:ease;
+	/* opacity:1; */
+	/* margin-top:0px; */
+	/* transition-property:opacity;
+	transition-duration:1s; */
+	/* transform-origin: right top; */
 	height:300px;
-	transform: rotate(7.5deg);
+	/* transform: rotate(10deg); */
 }
 
 .gallery-pic-box
