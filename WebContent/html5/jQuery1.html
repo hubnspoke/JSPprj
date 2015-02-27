@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-2.1.3.js">
+	window.onload = function(){
+		txt1 = $("#txt1");
+		txt1.attr("value", "hello");
+		var btnAttr = $("#btn-attr");
+		btnAttr.bind("click", function(){
+			alert("User clicked on 'hello.'")
+		});
+		
+		$("#btn-trig").click(function(){
+			alert("Trigger");
+			$("#btn-attr").trigger("click")
+		});
+	}
+</script>
+</head>
+<body>
+	<p>
+		<input id="btn-attr" type="button" value="속성 변경" />
+		<input id="btn-trig" type="button" value="트리거" />
+	</p>
+	<p>
+		<input type="text" id="txt1" />
+	</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var page = 1;
+	window.onload = function(){
+		var btnReq = document.querySelector("#btn-req");
+		btnReq.onclick = function(){
+			
+			var oReq = new XMLHttpRequest();
+			if (oReq) {
+				
+				oReq.onreadystatechange = function(){
+					if(oReq.readyState ==4){
+						var data = eval(oReq.responseText);
+						alert(data[1].id)
+					}
+				}
+				
+				oReq.open("GET", "data.jsp"=+page, true);
+				oReq.send();
+				/* var data = eval(oReq.responseText);
+				alert(data[1].id)
+				console.log(oReq.statusText); */
+			}
+			page++
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="요청"id="btn-req"/>
+</body>
+</html>
